@@ -5,6 +5,7 @@ import Web3Modal from "web3modal";
 import { NFT_CONTRACT_ADDRESS, abi } from '@/constants';
 import { Inter } from 'next/font/google'
 import styles from '@/styles/Home.module.css'
+import Image from 'next/image';
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -124,7 +125,7 @@ export default function Home() {
           {renderButton()}
         </div>
         <div>
-          <img className={styles.image} src='/LW3Punks/1.png' alt='punkimg' />
+          <Image width={800} height={600} className={styles.image} src='/LW3Punks/1.png' alt='punkimg' />
         </div>
       </main>
 
