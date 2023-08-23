@@ -45,7 +45,7 @@ export default function Home() {
       const provider = await getProviderOrSigner();
       const nftContract = new Contract(NFT_CONTRACT_ADDRESS, abi, provider);
       const _tokenIds = await nftContract.tokenIds();
-      console.log("tokenIds", _tokenIds);
+      //console.log("tokenIds", _tokenIds);
       setTokenIdsMinted(_tokenIds.toString())
     } catch (error) {
       console.error(error)
@@ -64,7 +64,8 @@ export default function Home() {
       setLoading(false);
       window.alert("successfully minted a LW3Punk!")
     } catch (error) {
-      console.error(error)
+      console.error(error);
+      window.alert("mint failed. check if you have sufficient funds.")
     }
   }
 
@@ -123,7 +124,7 @@ export default function Home() {
           {renderButton()}
         </div>
         <div>
-          <img className={styles.image} src='./LW3Punks/1.png' />
+          <img className={styles.image} src='./LW3Punks/1.png' alt='punkimg' />
         </div>
       </main>
 
